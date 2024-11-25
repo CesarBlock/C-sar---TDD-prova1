@@ -1,0 +1,46 @@
+1 - Cenário : Teste normal sem desconto
+Inputs e Outputs:
+Produtos = {name = "Gaita de boca", price = 100.00, quantity = 2};
+Desconto = 0%;
+Retorno esperado = 180,00
+Alterações no código: Com a implementação básica do desconto no código já funcionou, não houveram alterações.
+
+
+
+2 - Cenário : Teste normal com desconto
+Inputs e Outputs:
+Produtos = {name = "Gaita de boca", price = 100.00, quantity = 2};
+Desconto = 10%;
+Retorno esperado = 180,00
+Alterações no código: Não foram necessárias novas implementações
+
+
+
+3 - Cenário : Price total é maior do que mil
+Inputs e Outputs:
+Produtos =  {name = "violino", price = 600.00, quantity = 1}, 
+            {name = "violão meio capenga", price = 200.00, quantity = 1}, 
+            {name = "cajon", price = 500.00, quantity = 1};
+Desconto = 10%;
+Retorno esperado = 1070,00
+Alterações no código: Adicionado um IF no fim da função para quando o Valor for maior que mil, adicionar 100,00 de desconto
+
+
+
+4 - Cenário : Price é negativo
+Inputs e Outputs:
+Produtos =  {name = "piano quebrado", price = -100.00, quantity = 2}, 
+            {name = "flauta doce", price = 50.00, quantity = 4};
+Desconto = 10%;
+Retorno esperado = InvalidProductException
+Alterações no código: Adiconado um for no início da funcão para percorrer os produtos e validar se o price de algum é negativo, lançando uma exeption se for o caso
+
+
+
+5 - Cenário : Quantity é negativo
+Inputs e Outputs:
+Produtos =  {name = "piano de brinquedo", price = 100.00, quantity = 2}, 
+            {name = "flauta doce", price = 50.00, quantity = -4};
+Desconto = 10%;
+Retorno esperado = InvalidProductException
+Alterações no código: Adicionado no for inicial para também validar se o quantity do produto é negativo
